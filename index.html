@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adiwiyata | MTs Al Istiqomah Dungus Wungu</title>
+    
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Program Adiwiyata MTs Al Istiqomah Dungus Wungu Madiun. Mewujudkan generasi Islami yang peduli, berbudaya lingkungan, dan berwawasan global.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#059669', // Emerald 600
+                            dark: '#064e3b',  // Emerald 900
+                            light: '#d1fae5', // Emerald 100
+                            gold: '#fbbf24'   // Amber 400
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+        
+        /* Glassmorphism for Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Background with Gradient & Overlay */
+        /* === 1. GANTI BACKGROUND HERO DI SINI === */
+        /* Kode ini sekarang akan mencari file bernama 'hero-bg.jpg' di dalam folder 'assets' */
+        .hero-pattern {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(5, 150, 105, 0.8) 100%), 
+                        url('./assets/hero-bg.jpg') center/cover no-repeat;
+            position: relative;
+        }
+
+        /* Animated Leaves Container */
+        #leaves-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Single Leaf Animation */
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #4ade80;
+            border-radius: 0 100% 0 100%;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translate(100px, 100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #059669; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #064e3b; }
+
+        /* Card Hover Effect */
+        .program-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(5, 150, 105, 0.2), 0 10px 10px -5px rgba(5, 150, 105, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <!-- === 2. GANTI LOGO DI SINI === -->
+                    <!-- Memanggil logo dari folder assets. Jika logo tidak ada, otomatis kembali ke icon daun -->
+                    <img src="./assets/logo.png" alt="Logo MTs Al Istiqomah" class="w-12 h-12 object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+                    
+                    <div id="fallback-logo" class="hidden w-10 h-10 bg-gradient-to-br from-brand-green to-brand-dark rounded-full items-center justify-center text-white shadow-lg">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl leading-tight text-brand-dark">MTs Al Istiqomah</h1>
+                        <p class="text-xs text-brand-green font-semibold tracking-wider uppercase">Program Adiwiyata</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-600 hover:text-brand-green font-medium transition">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-brand-green font-medium transition">Tentang</a>
+                    <a href="#program" class="text-gray-600 hover:text-brand-green font-medium transition">Program Unggulan</a>
+                    <a href="#galeri" class="text-gray-600 hover:text-brand-green font-medium transition">Galeri</a>
+                    <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="bg-brand-green hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-medium transition shadow-md shadow-brand-green/30 transform hover:scale-105 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i> Dashboard
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-green focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#beranda" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Beranda</a>
+                <a href="#tentang" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Tentang</a>
+                <a href="#program" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Program Unggulan</a>
+                <a href="#galeri" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Galeri</a>
+                <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="block mt-2 px-3 py-3 text-base font-bold text-white bg-brand-green hover:bg-brand-dark rounded-lg text-center flex justify-center items-center gap-2 shadow-md">
+                    <i class="fa-solid fa-chart-line"></i> Dashboard Adiwiyata
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative hero-pattern h-screen flex items-center justify-center overflow-hidden">
+        <!-- JS Generated Leaves will append here -->
+        <div id="leaves-container"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16" data-aos="zoom-in" data-aos-duration="1200">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-sm text-brand-gold font-semibold text-sm tracking-widest uppercase mb-6 border border-white/30">
+                Mewujudkan Sekolah Berbudaya Lingkungan
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+                Hijaukan Bumi, <br />
+                <span class="text-brand-gold">Raih Ridho Ilahi.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-3xl mx-auto font-light drop-shadow-md">
+                Selamat datang di halaman resmi Program Adiwiyata MTs Al Istiqomah Dungus Wungu, Madiun. Bersama-sama mencetak generasi Islami yang peduli, mencintai, dan melestarikan alam sekitar.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="px-8 py-4 bg-brand-gold hover:bg-yellow-500 text-brand-dark font-bold rounded-full transition shadow-[0_0_20px_rgba(251,191,36,0.4)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-gauge-high"></i> Buka Dashboard
+                </a>
+                <a href="#program" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-dark font-bold rounded-full transition transform hover:-translate-y-1">
+                    Lihat Program
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#stats" class="text-white opacity-70 hover:opacity-100">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+        
+        <!-- Bottom Wave SVG -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.93,121.26,200.5,115.1,242.47,111.45,283.47,89.5,321.39,56.44Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Statistics / Counter Section (Overlapping Hero) -->
+    <section id="stats" class="relative z-20 -mt-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-gray-800 mb-1 counter" data-target="1250">0</h3>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Pohon Ditanam</p>
+                </div>
+                <div class="p-4">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-gray-800 mb-1"><span class="counter" data-target="850">0</span>+</h3>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Kg Sampah Didaur</p>
+                </div>
+                <div class="p-4">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-gray-800 mb-1 counter" data-target="450">0</h3>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Kader Adiwiyata</p>
+                </div>
+                <div class="p-4">
+                    <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-gray-800 mb-1">Tingkat</h3>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Provinsi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-24 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image side -->
+                <div class="relative" data-aos="fade-right">
+                    <!-- Decorative background element -->
+                    <div class="absolute -top-6 -left-6 w-64 h-64 bg-brand-gold rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
+                    <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-brand-green rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse animation-delay-2000"></div>
+                    
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <!-- === 3. GANTI FOTO "TENTANG" DI SINI === -->
+                        <img src="./assets/foto-tentang.jpg" alt="Siswa belajar di alam" class="w-full h-[500px] object-cover transform hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1509390238101-525413346452?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+                            <h4 class="text-white font-bold text-xl"><i class="fa-solid fa-quote-left text-brand-gold mr-2"></i>Hablum Minal Alam</h4>
+                            <p class="text-gray-200 text-sm mt-2">Menjaga hubungan baik dengan alam adalah wujud rasa syukur kepada Sang Pencipta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text side -->
+                <div data-aos="fade-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-dark font-semibold text-sm mb-6">
+                        <i class="fa-solid fa-leaf text-brand-green"></i> Tentang Adiwiyata Kami
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Mengakar pada Nilai Islami, <br/><span class="text-brand-green">Bertumbuh Menjaga Bumi.</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Program Adiwiyata di MTs Al Istiqomah Dungus Wungu bukan sekadar program sekolah biasa. Ini adalah gerakan moral dan spiritual yang kami tanamkan kepada setiap siswa.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Kami percaya bahwa pendidikan terbaik adalah yang mengintegrasikan kecerdasan intelektual, spiritual, dan ekologis. Melalui pembiasaan sehari-hari, kurikulum terintegrasi, dan fasilitas berwawasan lingkungan, kami membentuk karakter pemimpin masa depan yang peduli pada kelestarian bumi.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-green text-white flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Kurikulum Berbasis Lingkungan</h4>
+                                <p class="text-sm text-gray-500">Integrasi materi pelestarian alam dalam mata pelajaran.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-green text-white flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Kebijakan Sekolah Ramah Lingkungan</h4>
+                                <p class="text-sm text-gray-500">Aturan bebas plastik sekali pakai dan pengelolaan energi.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="#kontak" class="inline-flex items-center gap-2 bg-brand-dark hover:bg-brand-green text-white px-8 py-3 rounded-full font-medium transition duration-300">
+                        Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="program" class="py-24 bg-white relative">
+        <!-- Top decorative wave -->
+        <div class="absolute top-0 w-full overflow-hidden leading-[0] transform rotate-180">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px] md:h-[60px]">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.93,121.26,200.5,115.1,242.47,111.45,283.47,89.5,321.39,56.44Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-green font-bold tracking-wider uppercase text-sm mb-2">Aksi Nyata Kami</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Program <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-brand-dark">Unggulan</span> Adiwiyata</h3>
+                <p class="text-gray-600 text-lg">Langkah nyata MTs Al Istiqomah dalam mewujudkan ekosistem sekolah yang sehat, bersih, dan asri berkelanjutan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                        <!-- === 4. GANTI FOTO PROGRAM 1 DI SINI === -->
+                        <img src="./assets/program-1.jpg" alt="Bank Sampah" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
+                            <i class="fa-solid fa-recycle mr-1"></i> Zero Waste
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-green transition">Bank Sampah & Daur Ulang</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Pengelolaan sampah terpadu (Reduce, Reuse, Recycle) oleh siswa. Sampah non-organik disetor ke bank sampah sekolah dan diubah menjadi kerajinan bernilai guna.</p>
+                        <a href="#" class="text-brand-green font-semibold text-sm inline-flex items-center hover:text-brand-dark">Detail Program <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                        <!-- === 5. GANTI FOTO PROGRAM 2 DI SINI === -->
+                        <img src="./assets/program-2.jpg" alt="Green House" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
+                            <i class="fa-solid fa-seedling mr-1"></i> Konservasi
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-green transition">Green House & Apotek Hidup</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Laboratorium alam tempat siswa belajar pembibitan, hidroponik, dan penanaman Toga (Tanaman Obat Keluarga) yang rimbun di area madrasah.</p>
+                        <a href="#" class="text-brand-green font-semibold text-sm inline-flex items-center hover:text-brand-dark">Detail Program <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                        <!-- === 6. GANTI FOTO PROGRAM 3 DI SINI === -->
+                        <img src="./assets/program-3.jpg" alt="Hemat Energi" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
+                            <i class="fa-solid fa-lightbulb mr-1"></i> Efisiensi
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-green transition">Kampanye Hemat Energi & Air</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Gerakan masif menghemat listrik dan air. Dilengkapi sistem pemanenan air hujan (Rainwater Harvesting) untuk menyiram tanaman dan sanitasi.</p>
+                        <a href="#" class="text-brand-green font-semibold text-sm inline-flex items-center hover:text-brand-dark">Detail Program <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Testimonial Section -->
+    <section id="galeri" class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-2xl" data-aos="fade-right">
+                    <h2 class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2">Potret Inspiratif</h2>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white leading-tight">Galeri Kegiatan <br/><span class="text-brand-light">Adiwiyata</span></h3>
+                </div>
+                <div data-aos="fade-left">
+                    <button class="bg-white/10 hover:bg-white text-white hover:text-brand-dark border border-white/30 px-6 py-3 rounded-full font-medium transition backdrop-blur-sm">
+                        Lihat Semua Foto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Masonry Grid Alternative (Flex based for simplicity in pure tailwind) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="col-span-2 row-span-2 overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- === 7. GANTI FOTO GALERI 1 DI SINI === -->
+                    <img src="./assets/galeri-1.jpg" alt="Kegiatan Tanam Pohon" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 min-h-[300px] md:min-h-[100%]" onerror="this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg">Aksi Tanam 1000 Pohon</h4>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- === 8. GANTI FOTO GALERI 2 DI SINI === -->
+                    <img src="./assets/galeri-2.jpg" alt="Pembuatan Kompos" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <h4 class="text-white font-semibold text-sm">Pembuatan Kompos</h4>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="300">
+                    <!-- === 9. GANTI FOTO GALERI 3 DI SINI === -->
+                    <img src="./assets/galeri-3.jpg" alt="Kerajinan Daur Ulang" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <h4 class="text-white font-semibold text-sm">Pameran Daur Ulang</h4>
+                    </div>
+                </div>
+                <div class="col-span-2 overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="400">
+                    <!-- === 10. GANTI FOTO GALERI 4 DI SINI === -->
+                    <img src="./assets/galeri-4.jpg" alt="Pendidikan Lingkungan" class="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1523580494112-071d384e2047?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg">Edukasi Ekologi di Kelas</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-brand-green relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-gold opacity-20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="zoom-in">
+            <i class="fa-solid fa-hands-holding-circle text-5xl text-white mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Mari Wujudkan Bumi yang Lebih Baik, Mulai dari Madrasah Kita.</h2>
+            <p class="text-brand-light text-lg mb-10 max-w-2xl mx-auto">Dukungan Anda—baik berupa doa, partisipasi program, maupun kemitraan—sangat berarti bagi langkah kecil kami menyelamatkan bumi.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-dark font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:bg-yellow-500 hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+                    <i class="fa-solid fa-chart-line"></i> Buka Dashboard
+                </a>
+                <a href="https://mtsalistiqomah.sch.id" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-brand-green font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:bg-brand-light hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+                    <i class="fa-solid fa-globe"></i> Website Utama
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-gray-900 text-gray-300 py-16 border-t-4 border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Brand Info -->
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-brand-green rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-bold text-xl text-white">MTs Al Istiqomah</h2>
+                            <p class="text-xs text-brand-green font-semibold tracking-wider">Tim Adiwiyata</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
+                        Berkomitmen mendidik generasi Islami yang peduli pada pelestarian alam demi kehidupan masa depan yang lebih baik.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="hover:text-brand-green transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-green"></i> Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-brand-green transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-green"></i> Tentang Kami</a></li>
+                        <li><a href="#program" class="hover:text-brand-green transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-green"></i> Program Kerja</a></li>
+                        <li><a href="#galeri" class="hover:text-brand-green transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-brand-green"></i> Galeri Kegiatan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hubungi Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-green"></i>
+                            <span class="text-gray-400 text-sm">Dungus Wungu, Madiun, Jawa Timur, Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-green"></i>
+                            <span class="text-gray-400 text-sm">(+62) 812-XXXX-XXXX</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-green"></i>
+                            <span class="text-gray-400 text-sm">adiwiyata@mtsalistiqomah.sch.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Tim Adiwiyata MTs Al Istiqomah Dungus Wungu Madiun. All rights reserved.</p>
+                <p class="mt-2">Dibuat dengan <i class="fa-solid fa-heart text-brand-green"></i> untuk Bumi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 1. Initialize AOS Animation Library
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+            duration: 800, // values from 0 to 3000, with step 50ms
+            easing: 'ease-out-cubic', // default easing for AOS animations
+        });
+
+        // 2. Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 3. Navbar scroll effect (Glassmorphism shadow toggle)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('py-4', 'py-0'); // If you want padding changes
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // 4. Number Counter Animation for Stats Section
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    
+                    // Lower inc to slow and higher to fast
+                    const inc = target / speed;
+
+                    // Check if target is reached
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger counters when scrolled into view using IntersectionObserver
+        const statsSection = document.getElementById('stats');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                startCounters();
+                observer.disconnect(); // Run only once
+            }
+        }, { threshold: 0.5 });
+        
+        if (statsSection) observer.observe(statsSection);
+
+        // 5. JavaScript for generating animated falling leaves in the Hero section
+        function createLeaf() {
+            const container = document.getElementById('leaves-container');
+            if(!container) return;
+            
+            const leaf = document.createElement('div');
+            leaf.classList.add('leaf');
+            
+            // Randomize leaf properties
+            const startPosX = Math.random() * window.innerWidth;
+            const animationDuration = Math.random() * 5 + 5; // between 5s and 10s
+            const delay = Math.random() * 5;
+            const opacity = Math.random() * 0.5 + 0.3;
+            const size = Math.random() * 15 + 10; // 10px to 25px
+            
+            // Apply styles
+            leaf.style.left = `${startPosX}px`;
+            leaf.style.animationDuration = `${animationDuration}s`;
+            leaf.style.animationDelay = `${delay}s`;
+            leaf.style.opacity = opacity;
+            leaf.style.width = `${size}px`;
+            leaf.style.height = `${size}px`;
+            
+            // Add a slight rotation offset randomly
+            const rot = Math.random() * 360;
+            leaf.style.transform = `rotate(${rot}deg)`;
+            
+            // Randomly choose colors to make it look like different types of leaves
+            const colors = ['#34d399', '#10b981', '#059669', '#fbbf24']; // shades of green and one gold
+            leaf.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+            container.appendChild(leaf);
+            
+            // Remove leaf after animation to prevent DOM bloat
+            setTimeout(() => {
+                leaf.remove();
+            }, (animationDuration + delay) * 1000);
+        }
+
+        // Create a new leaf every 800ms
+        setInterval(createLeaf, 800);
+        
+        // Initial leaves
+        for(let i=0; i<15; i++) {
+            setTimeout(createLeaf, Math.random() * 2000);
+        }
+    </script>
+</body>
+</html>
