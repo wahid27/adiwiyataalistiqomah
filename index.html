@@ -56,8 +56,6 @@
         }
 
         /* Hero Background with Gradient & Overlay */
-        /* === 1. GANTI BACKGROUND HERO DI SINI === */
-        /* Kode ini sekarang akan mencari file bernama 'hero-bg.jpeg' di dalam folder 'assets' */
         .hero-pattern {
             background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(5, 150, 105, 0.8) 100%), 
                         url('./assets/hero-bg.jpeg') center/cover no-repeat;
@@ -127,9 +125,8 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <!-- === 2. GANTI LOGO DI SINI === -->
-                    <!-- Memanggil logo dari folder assets. Jika logo tidak ada, otomatis kembali ke icon daun -->
-                    <img src="./assets/logo.png" alt="Logo MTs Al Istiqomah" class="w-12 h-12 object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+                    <!-- Memanggil logo dari folder assets -->
+                    <img src="./assets/logo.png" alt="Logo MTs Al Istiqomah" class="w-12 h-12 object-contain" onerror="this.onerror=null; this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
                     
                     <div id="fallback-logo" class="hidden w-10 h-10 bg-gradient-to-br from-brand-green to-brand-dark rounded-full items-center justify-center text-white shadow-lg">
                         <i class="fa-solid fa-leaf"></i>
@@ -146,6 +143,7 @@
                     <a href="#tentang" class="text-gray-600 hover:text-brand-green font-medium transition">Tentang</a>
                     <a href="#program" class="text-gray-600 hover:text-brand-green font-medium transition">Program Unggulan</a>
                     <a href="#galeri" class="text-gray-600 hover:text-brand-green font-medium transition">Galeri</a>
+                    <!-- Tombol Dashboard GAS (Desktop) -->
                     <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="bg-brand-green hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-medium transition shadow-md shadow-brand-green/30 transform hover:scale-105 flex items-center gap-2">
                         <i class="fa-solid fa-chart-line"></i> Dashboard
                     </a>
@@ -167,6 +165,7 @@
                 <a href="#tentang" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Tentang</a>
                 <a href="#program" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Program Unggulan</a>
                 <a href="#galeri" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-green hover:bg-brand-light rounded-lg">Galeri</a>
+                <!-- Tombol Dashboard GAS (Mobile) -->
                 <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="block mt-2 px-3 py-3 text-base font-bold text-white bg-brand-green hover:bg-brand-dark rounded-lg text-center flex justify-center items-center gap-2 shadow-md">
                     <i class="fa-solid fa-chart-line"></i> Dashboard Adiwiyata
                 </a>
@@ -191,6 +190,7 @@
                 Selamat datang di halaman resmi Program Adiwiyata MTs Al Istiqomah Dungus Wungu, Madiun. Bersama-sama mencetak generasi Islami yang peduli, mencintai, dan melestarikan alam sekitar.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- Tombol Dashboard GAS (Utama Hero) -->
                 <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="px-8 py-4 bg-brand-gold hover:bg-yellow-500 text-brand-dark font-bold rounded-full transition shadow-[0_0_20px_rgba(251,191,36,0.4)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-gauge-high"></i> Buka Dashboard
                 </a>
@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <!-- Statistics / Counter Section (Overlapping Hero) -->
+    <!-- Statistics / Counter Section -->
     <section id="stats" class="relative z-20 -mt-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -223,8 +223,9 @@
                     <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
                         <i class="fa-solid fa-tree"></i>
                     </div>
+                    <!-- Update Data Tanaman -->
                     <h3 class="text-4xl font-extrabold text-gray-800 mb-1"><span class="counter" data-target="350">0</span>+</h3>
-                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Jumlah Tanaman</p>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Pohon & Tanaman</p>
                 </div>
                 <div class="p-4">
                     <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
@@ -237,6 +238,7 @@
                     <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-light text-brand-green rounded-full mb-4 text-2xl">
                         <i class="fa-solid fa-users"></i>
                     </div>
+                    <!-- Update Data Kader -->
                     <h3 class="text-4xl font-extrabold text-gray-800 mb-1"><span class="counter" data-target="70">0</span>+</h3>
                     <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Kader Adiwiyata</p>
                 </div>
@@ -245,6 +247,7 @@
                         <i class="fa-solid fa-award"></i>
                     </div>
                     <h3 class="text-4xl font-extrabold text-gray-800 mb-1">Tingkat</h3>
+                    <!-- Update Data Tingkat -->
                     <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Kabupaten</p>
                 </div>
             </div>
@@ -257,12 +260,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Image side -->
                 <div class="relative" data-aos="fade-right">
-                    <!-- Decorative background element -->
                     <div class="absolute -top-6 -left-6 w-64 h-64 bg-brand-gold rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
                     <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-brand-green rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse animation-delay-2000"></div>
                     
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                        <!-- === 3. GANTI FOTO "TENTANG" DI SINI === -->
                         <img src="./assets/foto-tentang.jpeg" alt="Siswa belajar di alam" class="w-full h-[500px] object-cover transform hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509390238101-525413346452?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
                             <h4 class="text-white font-bold text-xl"><i class="fa-solid fa-quote-left text-brand-gold mr-2"></i>Hablum Minal Alam</h4>
@@ -317,7 +318,6 @@
 
     <!-- Programs Section -->
     <section id="program" class="py-24 bg-white relative">
-        <!-- Top decorative wave -->
         <div class="absolute top-0 w-full overflow-hidden leading-[0] transform rotate-180">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px] md:h-[60px]">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.93,121.26,200.5,115.1,242.47,111.45,283.47,89.5,321.39,56.44Z" fill="#f8fafc"></path>
@@ -336,7 +336,6 @@
                 <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
-                        <!-- === 4. GANTI FOTO PROGRAM 1 DI SINI === -->
                         <img src="./assets/program-1.jpeg" alt="Bank Sampah" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
                             <i class="fa-solid fa-recycle mr-1"></i> Zero Waste
@@ -353,7 +352,6 @@
                 <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
-                        <!-- === 5. GANTI FOTO PROGRAM 2 DI SINI === -->
                         <img src="./assets/program-2.jpeg" alt="Green House" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
                             <i class="fa-solid fa-seedling mr-1"></i> Konservasi
@@ -370,7 +368,6 @@
                 <div class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-56 overflow-hidden relative">
                         <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
-                        <!-- === 6. GANTI FOTO PROGRAM 3 DI SINI === -->
                         <img src="./assets/program-3.jpeg" alt="Hemat Energi" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-green font-bold text-sm z-20 shadow-sm">
                             <i class="fa-solid fa-lightbulb mr-1"></i> Efisiensi
@@ -386,9 +383,8 @@
         </div>
     </section>
 
-    <!-- Gallery / Testimonial Section -->
+    <!-- Gallery Section -->
     <section id="galeri" class="py-24 bg-brand-dark relative overflow-hidden">
-        <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -397,127 +393,99 @@
                     <h2 class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2">Potret Inspiratif</h2>
                     <h3 class="text-3xl md:text-5xl font-bold text-white leading-tight">Galeri Kegiatan <br/><span class="text-brand-light">Adiwiyata</span></h3>
                 </div>
-                <div data-aos="fade-left">
-                    <button class="bg-white/10 hover:bg-white text-white hover:text-brand-dark border border-white/30 px-6 py-3 rounded-full font-medium transition backdrop-blur-sm">
-                        Lihat Semua Foto
-                    </button>
-                </div>
             </div>
 
-            <!-- Masonry Grid Alternative (Flex based for simplicity in pure tailwind) -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Foto 1-4 (Awal) -->
                 <div class="col-span-2 row-span-2 overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="100">
-                    <!-- === 7. GANTI FOTO GALERI 1 DI SINI === -->
-                    <img src="./assets/galeri-1.jpeg" alt="Kegiatan Tanam Pohon" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 min-h-[300px] md:min-h-[100%]" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <img src="./assets/galeri-1.jpeg" alt="Galeri Adiwiyata 1" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 min-h-[300px] md:min-h-[100%]" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <h4 class="text-white font-bold text-lg">Aksi Tanam 1000 Pohon</h4>
+                        <h4 class="text-white font-bold text-lg">Aksi Lingkungan</h4>
                     </div>
                 </div>
                 <div class="overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="200">
-                    <!-- === 8. GANTI FOTO GALERI 2 DI SINI === -->
-                    <img src="./assets/galeri-2.jpeg" alt="Pembuatan Kompos" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                    <img src="./assets/galeri-2.jpeg" alt="Galeri Adiwiyata 2" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <h4 class="text-white font-semibold text-sm">Pembuatan Kompos</h4>
+                        <h4 class="text-white font-semibold text-sm">Kolaborasi</h4>
                     </div>
                 </div>
                 <div class="overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="300">
-                    <!-- === 9. GANTI FOTO GALERI 3 DI SINI === -->
-                    <img src="./assets/galeri-3.jpeg" alt="Kerajinan Daur Ulang" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                    <img src="./assets/galeri-3.jpeg" alt="Galeri Adiwiyata 3" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <h4 class="text-white font-semibold text-sm">Pameran Daur Ulang</h4>
+                        <h4 class="text-white font-semibold text-sm">Kreativitas Siswa</h4>
                     </div>
                 </div>
                 <div class="col-span-2 overflow-hidden rounded-2xl relative group" data-aos="zoom-in" data-aos-delay="400">
-                    <!-- === 10. GANTI FOTO GALERI 4 DI SINI === -->
-                    <img src="./assets/galeri-4.jpeg" alt="Pendidikan Lingkungan" class="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523580494112-071d384e2047?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <img src="./assets/galeri-4.jpeg" alt="Galeri Adiwiyata 4" class="w-full h-48 md:h-64 object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523580494112-071d384e2047?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <h4 class="text-white font-bold text-lg">Edukasi Ekologi di Kelas</h4>
+                        <h4 class="text-white font-bold text-lg">Edukasi Ekologi</h4>
                     </div>
                 </div>
 
-                <!-- ========================================== -->
-                <!-- FOTO TAMBAHAN (Disembunyikan secara default) -->
-                <!-- ========================================== -->
-                
-                <!-- Foto 5 (Normal) -->
+                <!-- FOTO TAMBAHAN (Sembunyi) -->
+                <!-- 5 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-5.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1416879598555-25187e8346cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-5.jpeg" alt="Galeri 5" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1416879598555-25187e8346cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 6 (Normal) -->
+                <!-- 6 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-6.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618477461853-cf6ed80fbfc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-6.jpeg" alt="Galeri 6" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618477461853-cf6ed80fbfc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 7 (Lebar) -->
+                <!-- 7 (Lebar) -->
                 <div class="extra-photo hidden col-span-2 overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-7.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-7.jpeg" alt="Galeri 7" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
-                <!-- Foto 8 (Besar) -->
+                <!-- 8 (Besar) -->
                 <div class="extra-photo hidden col-span-2 row-span-2 overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-8.jpeg" alt="Galeri Adiwiyata" class="w-full h-full min-h-[300px] object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-8.jpeg" alt="Galeri 8" class="w-full h-full min-h-[300px] object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
-                <!-- Foto 9 (Normal) -->
+                <!-- 9 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-9.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-9.jpeg" alt="Galeri 9" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 10 (Normal) -->
+                <!-- 10 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-10.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-10.jpeg" alt="Galeri 10" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 11 (Normal) -->
+                <!-- 11 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-11.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-11.jpeg" alt="Galeri 11" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 12 (Normal) -->
+                <!-- 12 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-12.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-12.jpeg" alt="Galeri 12" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 13 (Lebar) -->
+                <!-- 13 (Lebar) -->
                 <div class="extra-photo hidden col-span-2 overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-13.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-13.jpeg" alt="Galeri 13" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
-                <!-- Foto 14 (Normal) -->
+                <!-- 14 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-14.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599598425947-330026217dc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-14.jpeg" alt="Galeri 14" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599598425947-330026217dc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 15 (Normal) -->
+                <!-- 15 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-15.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-15.jpeg" alt="Galeri 15" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 16 (Lebar) -->
+                <!-- 16 (Lebar) -->
                 <div class="extra-photo hidden col-span-2 overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-16.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-16.jpeg" alt="Galeri 16" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
-                <!-- Foto 17 (Normal) -->
+                <!-- 17 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-17.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-17.jpeg" alt="Galeri 17" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 18 (Normal) -->
+                <!-- 18 -->
                 <div class="extra-photo hidden overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-18.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509390238101-525413346452?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-18.jpeg" alt="Galeri 18" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509390238101-525413346452?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
                 </div>
-                <!-- Foto 19 (Lebar) -->
+                <!-- 19 (Lebar) -->
                 <div class="extra-photo hidden col-span-2 overflow-hidden rounded-2xl relative group opacity-0">
-                    <img src="./assets/galeri-19.jpeg" alt="Galeri Adiwiyata" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="./assets/galeri-19.jpeg" alt="Galeri 19" class="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition duration-700" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
-
             </div>
 
-            <!-- Bagian Tombol Load More -->
+            <!-- Tombol Load More -->
             <div class="mt-16 text-center" id="load-more-container" data-aos="fade-up" data-aos-delay="200">
                 <button id="load-more-btn" class="inline-flex items-center gap-3 border border-brand-green/30 text-white bg-transparent hover:bg-brand-green hover:border-brand-green px-8 py-4 rounded-full font-bold text-lg transition duration-500 shadow-[0_0_15px_rgba(5,150,105,0.2)] hover:shadow-[0_0_25px_rgba(5,150,105,0.6)] transform hover:-translate-y-1">
                     <i class="fa-solid fa-images text-xl"></i> Jelajahi Lebih Banyak Momen Hijau
@@ -536,6 +504,7 @@
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Mari Wujudkan Bumi yang Lebih Baik, Mulai dari Madrasah Kita.</h2>
             <p class="text-brand-light text-lg mb-10 max-w-2xl mx-auto">Dukungan Anda—baik berupa doa, partisipasi program, maupun kemitraan—sangat berarti bagi langkah kecil kami menyelamatkan bumi.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- Tombol Dashboard GAS (Bawah) -->
                 <a href="https://script.google.com/macros/s/AKfycbwg8a-3tVLNY9_X8cGrt9jdLKbHerW4_j7NRSc5S20rcbpI8N52L_douOFt9qSgceCE/exec" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-dark font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:bg-yellow-500 hover:shadow-2xl hover:-translate-y-1 transition duration-300">
                     <i class="fa-solid fa-chart-line"></i> Buka Dashboard
                 </a>
@@ -550,7 +519,6 @@
     <footer id="kontak" class="bg-gray-900 text-gray-300 py-16 border-t-4 border-brand-green">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <!-- Brand Info -->
                 <div class="col-span-1 lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 bg-brand-green rounded-full flex items-center justify-center text-white">
@@ -571,7 +539,6 @@
                     </div>
                 </div>
 
-                <!-- Tautan Cepat -->
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Tautan Cepat</h4>
                     <ul class="space-y-3">
@@ -582,7 +549,6 @@
                     </ul>
                 </div>
 
-                <!-- Kontak -->
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hubungi Kami</h4>
                     <ul class="space-y-4">
@@ -612,15 +578,15 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. Initialize AOS Animation Library
+        // Initialize AOS Animation Library
         AOS.init({
-            once: true, // whether animation should happen only once - while scrolling down
-            offset: 100, // offset (in px) from the original trigger point
-            duration: 800, // values from 0 to 3000, with step 50ms
-            easing: 'ease-out-cubic', // default easing for AOS animations
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
         });
 
-        // 2. Mobile Menu Toggle Logic
+        // Mobile Menu Toggle Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -628,35 +594,30 @@
             menu.classList.toggle('hidden');
         });
 
-        // 3. Navbar scroll effect (Glassmorphism shadow toggle)
+        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-md');
-                navbar.classList.replace('py-4', 'py-0'); // If you want padding changes
+                navbar.classList.replace('py-4', 'py-0');
             } else {
                 navbar.classList.remove('shadow-md');
             }
         });
 
-        // 4. Number Counter Animation for Stats Section
+        // Number Counter Animation for Stats Section
         const counters = document.querySelectorAll('.counter');
-        const speed = 200; // The lower the slower
+        const speed = 200;
 
         const startCounters = () => {
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
-                    
-                    // Lower inc to slow and higher to fast
                     const inc = target / speed;
 
-                    // Check if target is reached
                     if (count < target) {
-                        // Add inc to count and output in counter
                         counter.innerText = Math.ceil(count + inc);
-                        // Call function every ms
                         setTimeout(updateCount, 20);
                     } else {
                         counter.innerText = target;
@@ -666,18 +627,17 @@
             });
         };
 
-        // Trigger counters when scrolled into view using IntersectionObserver
         const statsSection = document.getElementById('stats');
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 startCounters();
-                observer.disconnect(); // Run only once
+                observer.disconnect();
             }
         }, { threshold: 0.5 });
         
         if (statsSection) observer.observe(statsSection);
 
-        // 5. JavaScript for generating animated falling leaves in the Hero section
+        // Falling leaves in Hero section
         function createLeaf() {
             const container = document.getElementById('leaves-container');
             if(!container) return;
@@ -685,14 +645,12 @@
             const leaf = document.createElement('div');
             leaf.classList.add('leaf');
             
-            // Randomize leaf properties
             const startPosX = Math.random() * window.innerWidth;
-            const animationDuration = Math.random() * 5 + 5; // between 5s and 10s
+            const animationDuration = Math.random() * 5 + 5;
             const delay = Math.random() * 5;
             const opacity = Math.random() * 0.5 + 0.3;
-            const size = Math.random() * 15 + 10; // 10px to 25px
+            const size = Math.random() * 15 + 10;
             
-            // Apply styles
             leaf.style.left = `${startPosX}px`;
             leaf.style.animationDuration = `${animationDuration}s`;
             leaf.style.animationDelay = `${delay}s`;
@@ -700,53 +658,44 @@
             leaf.style.width = `${size}px`;
             leaf.style.height = `${size}px`;
             
-            // Add a slight rotation offset randomly
             const rot = Math.random() * 360;
             leaf.style.transform = `rotate(${rot}deg)`;
             
-            // Randomly choose colors to make it look like different types of leaves
-            const colors = ['#34d399', '#10b981', '#059669', '#fbbf24']; // shades of green and one gold
+            const colors = ['#34d399', '#10b981', '#059669', '#fbbf24'];
             leaf.style.background = colors[Math.floor(Math.random() * colors.length)];
 
             container.appendChild(leaf);
             
-            // Remove leaf after animation to prevent DOM bloat
             setTimeout(() => {
                 leaf.remove();
             }, (animationDuration + delay) * 1000);
         }
 
-        // Create a new leaf every 800ms
         setInterval(createLeaf, 800);
-        
-        // Initial leaves
         for(let i=0; i<15; i++) {
             setTimeout(createLeaf, Math.random() * 2000);
         }
 
-        // 6. Logika Tombol "Jelajahi Lebih Banyak" di Galeri
+        // Logic for "Jelajahi Lebih Banyak" Gallery Button
         const loadMoreBtn = document.getElementById('load-more-btn');
         const extraPhotos = document.querySelectorAll('.extra-photo');
         const loadMoreContainer = document.getElementById('load-more-container');
 
         if (loadMoreBtn && extraPhotos.length > 0) {
             loadMoreBtn.addEventListener('click', () => {
-                // Sembunyikan container tombol perlahan
                 loadMoreContainer.style.transition = "opacity 0.3s ease";
                 loadMoreContainer.style.opacity = "0";
                 
                 setTimeout(() => {
                     loadMoreContainer.style.display = 'none';
                     
-                    // Munculkan foto satu per satu secara estetis (waterfall effect)
                     extraPhotos.forEach((photo, index) => {
                         photo.classList.remove('hidden');
                         setTimeout(() => {
                             photo.classList.add('show-gallery');
-                        }, index * 100); // jeda 100ms antar foto
+                        }, index * 100);
                     });
 
-                    // Refresh animasi AOS jika pengunjung scroll lebih jauh
                     setTimeout(() => { AOS.refresh(); }, extraPhotos.length * 100 + 500);
                 }, 300);
             });
