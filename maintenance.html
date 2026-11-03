@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>503 Service Unavailable - MTs Al-Istiqomah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Grid background pattern like modern tech brands */
+        .bg-grid-light {
+            background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+            background-size: 28px 28px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(0.98); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float 5s ease-in-out infinite 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between p-6 bg-grid-light selection:bg-blue-500 selection:text-white">
 
+    <!-- Top Brand Header (Minimalist & Clean) -->
+    <header class="w-full max-w-5xl mx-auto flex items-center justify-between py-4">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-500/20">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+                <span class="font-extrabold text-slate-900 tracking-tight text-lg leading-none block">MTs Al-Istiqomah</span>
+                <span class="text-[11px] font-semibold tracking-wider text-blue-600 uppercase">Official School Portal</span>
+            </div>
+        </div>
+        <div class="hidden sm:flex items-center space-x-2 bg-slate-200/60 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-slate-300/50 text-xs text-slate-600 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Jadwal Maintenance: 20 November 2026</span>
+        </div>
+    </header>
+
+    <!-- URGENT ANNOUNCEMENT BANNER -->
+    <div class="w-full max-w-xl mx-auto mt-4 px-4">
+        <div class="relative group bg-gradient-to-r from-amber-500/10 via-red-500/10 to-amber-500/10 border border-amber-500/30 rounded-2xl p-3.5 backdrop-blur-sm shadow-lg shadow-amber-500/5 flex items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500 text-slate-900 shadow-sm shadow-amber-500/30">
+                    <i class="fa-solid fa-triangle-exclamation mr-1.5 text-[9px]"></i> PERINGATAN MASA AKTIF
+                </span>
+                <p class="text-xs sm:text-sm font-semibold text-slate-800">
+                    Jika Urgent : <span class="text-red-600 font-bold">Langsung HUbungi Humas Madrasah</span>
+                </p>
+            </div>
+            <a href="https://wa.me/6281234567890" target="_blank" class="shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-all duration-200 shadow-sm flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span class="whitespace-nowrap">Chat Humas MAdrasah</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Hero (Out of the Box Vector Concept) -->
+    <main class="w-full max-w-4xl mx-auto my-auto py-8 text-center flex flex-col items-center">
+        
+        <!-- Big Vector Illustration Container (Inspired by Atlassian & 503 Web Illustrations) -->
+        <div class="relative w-full max-w-md h-64 sm:h-72 mb-6 flex items-center justify-center">
+            
+            <!-- Floating Background Glow -->
+            <div class="absolute w-64 h-64 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- SVG Out of the Box Illustration -->
+            <svg class="w-full h-full relative z-10" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Cloud Animated -->
+                <g class="animate-float-delayed">
+                    <path d="M120 140 C120 110, 150 90, 180 100 C200 70, 250 70, 270 95 C290 85, 320 100, 320 125 C340 130, 340 160, 320 170 C320 170, 120 170, 120 140 Z" fill="#E2E8F0"/>
+                    <path d="M220 100 C220 80, 240 65, 265 72 C280 50, 315 50, 330 70 C345 62, 365 75, 365 92 C380 97, 380 120, 365 125 Z" fill="#CBD5E1" opacity="0.6"/>
+                </g>
+
+                <!-- Rotating Gears behind Monitor -->
+                <g class="origin-[350px_110px] animate-[spin_12s_linear_infinite]">
+                    <path d="M350 85 V92 M350 128 V135 M325 110 H332 M368 110 H375 M332 92 L337 97 M363 123 L368 128 M332 128 L337 123 M363 97 L368 92" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="350" cy="110" r="16" fill="#F8FAFC" stroke="#3B82F6" stroke-width="5"/>
+                </g>
+
+                <!-- Main Desktop Monitor Frame -->
+                <g class="animate-float">
+                    <!-- Monitor Stand -->
+                    <rect x="215" y="240" width="70" height="30" rx="4" fill="#64748B"/>
+                    <path d="M180 270 H320" stroke="#475569" stroke-width="8" stroke-linecap="round"/>
+
+                    <!-- Monitor Body -->
+                    <rect x="90" y="80" width="320" height="170" rx="16" fill="#1E293B" class="shadow-2xl"/>
+                    <rect x="100" y="90" width="300" height="150" rx="10" fill="#FFFFFF"/>
+                    
+                    <!-- Top Browser Bar -->
+                    <rect x="100" y="90" width="300" height="24" rx="10" fill="#F1F5F9"/>
+                    <circle cx="116" cy="102" r="4" fill="#EF4444"/>
+                    <circle cx="128" cy="102" r="4" fill="#F59E0B"/>
+                    <circle cx="140" cy="102" r="4" fill="#10B981"/>
+
+                    <!-- Big Bold 503 Inside Monitor -->
+                    <text x="250" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0F172A" text-anchor="middle" letter-spacing="-2">503</text>
+                    <text x="250" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13" fill="#64748B" text-anchor="middle" letter-spacing="1">HOSTING NOTICE</text>
+                </g>
+
+                <!-- Traffic Cone (Foreground Left) -->
+                <g class="animate-float" style="animation-delay: 0.5s;">
+                    <path d="M110 270 L135 190 H155 L180 270 Z" fill="#F97316"/>
+                    <path d="M125 220 L130 205 H160 L165 220 Z" fill="#FFFFFF"/>
+                    <path d="M117 246 L123 230 H167 L173 246 Z" fill="#FFFFFF"/>
+                    <rect x="95" y="265" width="100" height="12" rx="4" fill="#EA580C"/>
+                </g>
+
+                <!-- Electrical/Cloud Cloud Lightning (Right Foreground) -->
+                <g class="animate-float-delayed">
+                    <circle cx="390" cy="200" r="28" fill="#3B82F6" opacity="0.9"/>
+                    <path d="M390 185 L380 202 H392 L386 218 L402 198 H390 L396 185 Z" fill="#FEF08A"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- GIANT MODERN COUNTDOWN TIMER CARD (Interaktif & Eye-Catching) -->
+        <div class="mb-6 w-full max-w-sm mx-auto">
+            <div class="relative bg-white/80 backdrop-blur-md border border-slate-200/80 rounded-3xl p-5 shadow-xl shadow-slate-200/50 flex flex-col items-center">
+                <!-- Decorative Top Tag -->
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-1 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                    Website akan terbuka dalam, ...
+                </span>
+
+                <!-- Giant Numbers Display -->
+                <div class="flex items-baseline justify-center space-x-1.5 my-1">
+                    <span id="countdownText" class="text-6xl sm:text-7xl font-black text-slate-900 tracking-tight font-mono drop-shadow-sm transition-all duration-300">7</span>
+                    <span class="text-xl font-bold text-amber-500 font-mono">detik</span>
+                </div>
+
+                <!-- Subtle Progress Bar Background -->
+                <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mt-2">
+                    <div class="bg-gradient-to-r from-amber-500 to-red-500 h-full w-full animate-[pulse_1.5s_infinite]"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Headline & Short Subtitle -->
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+            Akses Sementara Masih Aktif
+        </h1>
+        <p class="text-slate-600 text-base max-w-xl mb-8 leading-relaxed">
+            Layanan website MTs Al-Istiqomah akan <strong class="text-red-600 font-bold">nonaktif total</strong> apabila perpanjangan hosting tidak diselesaikan sebelum <strong class="text-slate-900 font-bold">20 November 2026</strong>. Lakukan perpanjangan segera agar sistem tetap dapat diakses publik.
+        </p>
+
+        <!-- Action Buttons (Modern Pill Shaped) -->
+        <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+            <button id="redirectBtn" onclick="window.location.replace('/index.php')" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-xl shadow-slate-900/10 transition-all duration-200 active:scale-95">
+                <i class="fa-solid fa-arrow-right-to-bracket mr-2 text-xs"></i>
+                Lanjut ke Website Sekarang
+            </button>
+            <a href="https://wa.me/6281992342160" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-lg shadow-emerald-600/20 transition-all duration-200 active:scale-95">
+                <i class="fa-brands fa-whatsapp mr-2 text-base"></i>
+                Hubungi Humas Madrasah
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Simple Modern Footer -->
+    <footer class="w-full max-w-5xl mx-auto py-4 text-center border-t border-slate-200/80">
+        <p class="text-xs text-slate-400 font-medium">
+            &copy; <span id="year"></span> MTs Al-Istiqomah. All rights reserved.
+        </p>
+    </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const yearElement = document.getElementById('year');
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    let seconds = 7;
+    const countdownText = document.getElementById('countdownText');
+
+    const timer = setInterval(function () {
+
+        seconds--;
+
+        if (countdownText) {
+            countdownText.textContent = seconds;
+        }
+
+        if (seconds <= 0) {
+            clearInterval(timer);
+            window.location.replace('/home.html');
+        }
+
+    }, 1000);
+
+});
+</script>
+</body>
+</html>
